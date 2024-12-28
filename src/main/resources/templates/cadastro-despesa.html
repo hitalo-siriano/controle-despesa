@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    >
+
+</head>
+<body>
+<main class="container" >
+    <a href="/cadastro-despesa">Nova Despesa</a></br>
+    <a href="/lista-despesa">Lista Despesa</a></br>
+
+    <form  th:action="@{/cadastro-despesa}" method="post">
+
+        <label for="">Nome da Despesa</label>
+        <input type="text" name="nome"  ></br>
+
+        <label for="">Categoria</label>
+        <input type="text" name="categoria" ></br>
+
+        <label for="">Data de Pagamento</label>
+        <input type="date" name="dataDespesa" </br>
+
+        <label for="">Valor da Despesa</label>
+        <input type="number" name="valorPagamento" step=".01"  ></br>
+
+        <label for="">Descrição</label>
+        <input type="text" name="descricao" ></br>
+
+        <input type="submit" value="enviar">
+
+    </form>
+</main>
+
+
+</body>
+</html>

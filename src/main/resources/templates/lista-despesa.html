@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    >
+</head>
+<body>
+<main class="container-fluid" >
+<a href="/cadastro-despesa">Nova Despesa</a></br>
+<a href="/lista-despesa">Atualizar</a></br>
+
+<table class="striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nome da Despesa</th>
+        <th>Categoria</th>
+        <th>Data de Pagamento</th>
+        <th>Valor da Despesa</th>
+        <th>Descrição</th>
+        <th>Editar</th>
+        <th>Excluir</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Exemplo de linha de dados (deve ser populada dinamicamente) -->
+    <tr th:each="despesa : ${despesaModel}">
+        <td th:text= ${despesa.id}></td>
+        <td th:text= ${despesa.nome}></td>
+        <td th:text= ${despesa.categoria}></td>
+        <td th:text= ${despesa.dataDespesa}></td>
+        <td th:text= ${despesa.valorPagamento}></td>
+        <td th:text= ${despesa.descricao}></td>
+        <td>
+        <td> <a th:href="@{/editar-despesa/{id}(id=${despesa.id})}" ><button>Editar</button></a></td>
+
+
+
+        </td>
+        <td> <a th:href="@{/excluir-despesa/{id}(id=${despesa.id})}" ><button>Excluir</button></a></td>
+    </tr>
+    <!-- Mais linhas podem ser adicionadas aqui dinamicamente -->
+    </tbody>
+</table>
+
+</main>
+</body>
+</html>
